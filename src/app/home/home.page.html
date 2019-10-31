@@ -1,0 +1,29 @@
+<ion-header>
+   <ion-toolbar>
+      <ion-title>
+         Ionic Blank
+      </ion-title>
+   </ion-toolbar>
+</ion-header>
+
+<ion-content>
+   <div class="main">
+      <div class="chat-box">
+         <div class="message-area">
+            <div class="message" *ngFor="let message of messages" [ngClass]="getClasses(message.type)">
+               <p>{{message.message}}</p>
+            </div>
+         </div>
+         <div class="input-area">
+            <div id="form">
+               <ion-input type="text" name="message" id="message" [(ngModel)]="message"
+                          placeholder="Say something nice..."></ion-input>
+               <button (click)="sendMessage()">
+
+                  <ion-icon name="send"></ion-icon>
+               </button>
+            </div>
+         </div>
+      </div>
+   </div>
+</ion-content>
